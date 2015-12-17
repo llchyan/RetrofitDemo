@@ -1,0 +1,35 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="BaseAppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+
+
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+  <style name="AppTheme"  parent="BaseAppTheme">
+
+  </style>
+
+    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar">
+        <!--<item name="colorPrimary">@color/colorPrimary</item>-->
+        <!-- 对title有作用-->
+        <item name="android:textColorPrimary">@android:color/white</item>
+        <!-- 对subtitle有作用,对缩起来的ActionMenuView的竖三点颜色起作用-->
+        <item name="android:textColorSecondary">@android:color/white</item>
+        <!-- 可以对Menu text起作用-->
+        <item name="android:textSize">16sp</item>
+        <!-- 可以对弹出来的Menu text起作用-->
+        <item name="android:textColor">@color/translate_40</item>
+        <!-- 只对设置加进去的标题和menu起作用，最底层的背景不会变化-->
+        <!--<item name="android:background">@color/colorPrimary</item>-->
+    </style>
+
+    <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light"/>
+
+</resources>

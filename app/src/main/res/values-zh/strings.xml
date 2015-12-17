@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="app_name">retrofitdemo</string>
+
+    <!--draw— menu-->
+    <string name="homepage">首页</string>
+    <string name="my_treasure">我的宝贝</string>
+    <string name="my_collection">我的收藏</string>
+    <string name="my_post">我的帖子</string>
+    <string name="post_back">我的回帖</string>
+    <string name="browsing_history">浏览历史</string>
+    <string name="my_friend">我的好友</string>
+    <string name="point_shop">积分商城</string>
+    <string name="settings">设置</string>
+    <string name="help_and_feedback">帮助与反馈</string>
+    <!--draw— menu-->
+    <string name="action_message">消息</string>
+    <string name="action_search">搜索</string>
+    <string name="action_publish_treasure">发布宝贝</string>
+    <string name="action_shake">摇一摇</string>
+    <string name="action_publish_post">发布帖子</string>
+
+    <!--title_activity -->
+    <string name="title_activity_recycler">测试Demo</string>
+    <string name="title_activity_about">关于</string>
+    <!--title_activity -->
+
+    <string name="search">搜索</string>
+    <string name="setting">设置</string>
+    <string name="action_settings">设置</string>
+    <string name="about">浏览记录</string>
+
+    <string name="hello_blank_fragment">呵呵哈哈</string>
+
+</resources>
