@@ -1,4 +1,4 @@
-package com.llchyan.retrofitdemo;
+package com.llchyan.retrofitdemo.activities;
 
 import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.ActionBar;
@@ -8,6 +8,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 
 import com.google.gson.Gson;
+import com.llchyan.retrofitdemo.R;
 import com.llchyan.retrofitdemo.base.BaseActivity;
 import com.llchyan.retrofitdemo.model.BoxOfficeMovieResponse;
 import com.llchyan.retrofitdemo.model.Coupon;

@@ -12,5 +12,6 @@ public class BaseApplication extends Application
     {
         super.onCreate();
 //        Fresco.initialize(this);
+//        startService(new Intent(this, ConnectionService.class));
     }
 }
