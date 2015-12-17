@@ -1,18 +1,18 @@
 package com.llchyan.retrofitdemo.retrofit;
 
+import com.llchyan.retrofitdemo.model.BoxOfficeMovieResponse;
 import com.llchyan.retrofitdemo.model.Coupon;
 
 import java.util.Map;
 
+import retrofit.Call;
 import retrofit.Callback;
-import retrofit.client.Response;
+import retrofit.Response;
 import retrofit.http.Field;
 import retrofit.http.FieldMap;
 import retrofit.http.FormUrlEncoded;
-import retrofit.http.Multipart;
+import retrofit.http.GET;
 import retrofit.http.POST;
-import retrofit.http.Part;
-import retrofit.mime.TypedFile;
 
 /**
  * Created by LinLin on 2015/12/17.测试接口
@@ -38,24 +38,46 @@ public interface TestApi
     //那么我们就可以用一个Map去封装, 通过key-value的形式封装好Map对象后再传入, 代码会相对整洁, 在做参数传递的时候也不至于乱套
     @FormUrlEncoded
     @POST("/interface/xxxxxx")
-    void getCourseList(@FieldMap Map<String,String> paramsMap, Callback<Coupon> response);
+    void getCourseList(@FieldMap Map<String, String> paramsMap, Callback<Coupon> response);
 
     //4. 提交multipart请求
     // 注: 如果我们要提交用户拍的的照片, 或者是录好的语音, 那么我们就要用到@Multipart这个注解了
     // 在使用Multipart的时候, 注意参数的注解必须是@Part或者@PartMap
     // @PartMap和上面的@FieldMap类似, 都是通过Map封装好参数, 就不过多解释了.
-    @Multipart
-    @POST("/interface/photoUpload_servlet")
-    void submitUserPhoto(@Part("userId") String userId, @Part("file") TypedFile file, Callback<Coupon> response );
+    //    @Multipart
+    //    @POST("/interface/photoUpload_servlet")
+    //    void submitUserPhoto(@Part("userId") String userId, @Part("file") TypedFile file, Callback<Coupon> response );
 
 
-//    //首先定义一个mimeType类型, 如果我要上传的是一张图片, 就按如下定义
-//    String mimeType = "image/jpg";
-//    //String mimeType = "audio/m4a";//如果是m4a的声音文件, 就这么定义
-//    TypedFile typedFile = new TypedFile(mimeType, file);//调用这个方法将文件转为TypedFile形势, 传参上传即可
+    //    //首先定义一个mimeType类型, 如果我要上传的是一张图片, 就按如下定义
+    //    String mimeType = "image/jpg";
+    //    //String mimeType = "audio/m4a";//如果是m4a的声音文件, 就这么定义
+    //    TypedFile typedFile = new TypedFile(mimeType, file);//调用这个方法将文件转为TypedFile形势, 传参上传即可
 
 
     //但如果我们想获得JSON字符串，Callback的泛型里就不能写POJO类了，要写Response（retrofit.client包下）
     @POST("/interface/xxxxxx")
     void getCouponList2(Callback<Response> reponse);
+
+
+    //在Retrofit 2.0上，只能定义一个模式，因此要简单得多.
+    //Call<BoxOfficeMovieResponse> call = service.listRepos();
+    //同步请求 :
+    //          BoxOfficeMovieResponse b = call.execute();
+    //异步请求 : call.execute(new Callback<Repo>() {
+    //              @Override
+    //              public void onResponse(Response<Repo> response) {
+    //               // Get result Repo from response.body()
+    //               }
+    //
+    //              @Override
+    //               public void onFailure(Throwable t) {
+    //
+    //                 }
+    //          });
+    @GET("lists/movies/box_office.json")
+    public Call<BoxOfficeMovieResponse> listRepos();
+
+    @GET("lists/movies/box_office.json")
+    public Call<Response> listRepos2();
 }
