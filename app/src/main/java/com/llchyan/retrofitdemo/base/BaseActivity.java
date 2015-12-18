@@ -7,7 +7,6 @@ import android.os.Bundle;
 import android.support.annotation.LayoutRes;
 import android.support.annotation.NonNull;
 import android.support.design.widget.Snackbar;
-import android.support.v7.app.AppCompatActivity;
 import android.util.DisplayMetrics;
 import android.view.MenuItem;
 import android.view.View;
@@ -16,13 +15,14 @@ import android.view.WindowManager;
 import android.widget.Toast;
 
 import com.llchyan.retrofitdemo.R;
+import com.llchyan.rxlifecycle.RxAppCompatActivity;
 
 import butterknife.ButterKnife;
 
 /**
  * Created by LinLin on 2015/12/5.
  */
-public abstract class BaseActivity extends AppCompatActivity
+public abstract class BaseActivity extends RxAppCompatActivity
 {
     public static final String HLSTREET_SERVER = "http://2.0.hlstreet.com/mobile/";
 
